@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JQuery</title>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
     <style>
       body {
         font-size: 17px;
@@ -33,58 +34,82 @@
     </header>
 
     <div id="container">
-      <h1 id="heading1">Heading One</h1>
-      <p id="para1">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos eligendi
-        commodi sed voluptates laborum
-        <span>quae rem quidem perferendis!</span> Iusto, nostrum.
+      <h3>Mouse Events</h3>
+      <button id="btn1">Button 1</button>
+      <button id="btn2">Button 2</button>
+      <p class="para1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium ad
+        cupiditate nostrum nobis, eos maxime excepturi provident cumque
+        inventore aspernatur.
       </p>
-
-      <h1 class="heading2">Heading Two</h1>
-      <p class="para2">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos eligendi
-        commodi sed voluptates laborum
-        <span>quae rem quidem perferendis!</span> Iusto, nostrum.
-      </p>
-
-      <ul id="list">
-        <li>List Item</li>
-        <li>List Item</li>
-        <li>List Item</li>
-        <li>List Item</li>
-        <li>List Item</li>
-        <li>List Item</li>
-        <li>List Item</li>
-        <li>List Item</li>
-      </ul>
-
-      <input type="button" value="Button 1" />
-      <input type="submit" value="Button 1" />
-      <input type="text" placeholder="type here" />
-
-      <a href="http://google.com/">Google</a>
-      <a href="http://yahoo.com/">Yahoo</a>
+      <h2 id="coords"></h2>
     </div>
 
     <script>
-      // $("h1").hide();
-      // $("h1#heading1").hide();
-      // $(".heading2").hide();
+      $(document).ready(function () {
+        /*
+        $("#btn1").click(function () {
+          alert("Button clicked!");
+        });
+        
 
-      // $("p span").css("color", "red");
+        $("#btn1").on("click", function () {
+          alert("Button clicked!");
+        });
+        */
+        /*
+        $("#btn1").on("click", function () {
+          // $(".para1").hide();
+          $(".para1").toggle();
+        });
 
-      $("ul#list li:first").css("color", "red");
-      $("ul#list li:last").css("color", "red");
-      $("ul#list li:even").css("background-color", "yellow");
-      $("ul#list li:odd").css("background-color", "#ccc");
-      $("ul#list li:nth-child(3n)").css("list-style", "none");
+        $("#btn2").on("click", function () {
+          $(".para1").show();
+        });
+        */
+        /*
 
-      $(":text").hide();
+        $("#btn1").dblclick(() => {
+          $(".para1").toggle();
+        });
 
-      $("[href]").css("color", "red");
-      $("a[href='http://yahoo.com/']").css("color", "green");
+        $("#btn1").hover(() => {
+          $(".para1").toggle();
+        });
 
-      // $("*").hide();
+
+
+        $("#btn1").on("mouseenter", function () {
+          $(".para1").toggle();
+        });
+        $("#btn1").on("mouseleave", function () {
+          $(".para1").toggle();
+        });
+
+        $("#btn1").on("mousemove", function () {
+          $(".para1").toggle();
+        });
+
+
+        $("#btn1").on("mousedown", function () {
+          $(".para1").toggle();
+        });
+        $("#btn1").on("mouseup", function () {
+          $(".para1").toggle();
+        });
+        */
+
+        $("#btn1").click(function (e) {
+          // alert(e.currentTarget.id);
+          // alert(e.currentTarget.innerHTML);
+          // alert(e.currentTarget.outerHTML);
+          // alert(e.currentTarget.className);
+        });
+
+        $(document).on("mousemove", (e) => {
+          $("#coords").html("Coords: Y: " + e.clientY + " X : " + e.clientX);
+        });
+      });
     </script>
   </body>
 </html>
